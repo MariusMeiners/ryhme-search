@@ -1,3 +1,13 @@
 .ListItem_container {
-  padding: 5px 5px;
+  padding: 5px 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.ListItem_word {
+  font-size: 1.4rem;
+}
+
+.ListItem_container p {
+  margin: auto 0;
 }

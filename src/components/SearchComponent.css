@@ -1,38 +1,36 @@
 .searchComponent__container {
   display: grid;
   height: 100vh;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .searchComponent__title {
   text-align: center;
-  /* background: repeating-linear-gradient(
-    45deg,
-    white,
-    white 10px,
-    black 10px,
-    black 11px
-  ); */
-  /* background: linear-gradient(
-    to left bottom,
-    hsl(138, 100%, 85%) 0%,
-    hsl(231, 100%, 85%) 100%
-  ); */
+  font-family: "Montserrat", sans-serif;
 }
 
 .searchComponent_description {
   text-align: center;
+  font-weight: lighter;
 }
 
 .searchComponent_form {
   display: grid;
   grid-template-rows: auto 300px;
+  grid-column-gap: 5px;
   grid-template-columns: 1fr 1fr;
 }
 
 .searchComponent__list {
+  padding: 5px 0;
   grid-column-start: 1;
   overflow: scroll;
   grid-column-end: 3;
+}
+
+.SearchComponent_ratebutton {
+  margin-bottom: 10px;
 }
 
 /* normalize */

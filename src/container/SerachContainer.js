@@ -8,7 +8,9 @@ export default class SearchContainer extends React.Component {
     super(props);
     this.state = {
       ryhmeWord: "",
-      foundRhymeWords: []
+      foundRhymeWords: [],
+      highestScore: undefined,
+      highestNumberOfSyllables: undefined
     };
   }
 
@@ -16,7 +18,12 @@ export default class SearchContainer extends React.Component {
     const foundRhymeWords = await getListOfRyhmeWordsForGivenWord(
       this.state.ryhmeWord
     );
-    this.setState({ foundRhymeWords });
+    const highestNumberOfSyllables = Math.max(
+      ...foundRhymeWords.map(e => e.numSyllables)
+    );
+    const highestScore = Math.max(...foundRhymeWords.map(e => e.score));
+
+    this.setState({ foundRhymeWords, highestScore, highestNumberOfSyllables });
   };
 
   onRhymeWordChange = changeEvent => {
@@ -24,8 +31,11 @@ export default class SearchContainer extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <SearchComponent
+        highestScore={this.state.highestScore}
+        highestNumberOfSyllables={this.state.highestNumberOfSyllables}
         foundRhymeWords={this.state.foundRhymeWords}
         rhymeWord={this.state.rhymeWord}
         onRhymeWordChange={this.onRhymeWordChange}
