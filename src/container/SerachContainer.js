@@ -31,14 +31,12 @@ export default class SearchContainer extends React.Component {
   };
 
   setRhymeWord = rhymeWord => {
-    console.log(rhymeWord);
     this.setState({ rhymeWord }, () => {
       this.onSearchClick();
     });
   };
 
   render() {
-    console.log(this.state);
     return (
       <SearchComponent
         setRhymeWord={this.setRhymeWord}
