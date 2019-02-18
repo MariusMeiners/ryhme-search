@@ -1,16 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
+import { useSpring, animated } from "react-spring";
 import "./App.css";
 
 import SearchContainer from "./container/SerachContainer";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <SearchContainer />
-      </div>
-    );
-  }
-}
+const App = () => {
+  const animationProps = useSpring({ opacity: 1, from: { opacity: 0 } });
+  return (
+    <animated.div style={animationProps} className="App">
+      <SearchContainer />
+    </animated.div>
+  );
+};
 
 export default App;

@@ -25,6 +25,9 @@ const SearchComponent = props => {
         <div className="searchComponent__list">
           {props.foundRhymeWords.map((element, index) => (
             <ListItem
+              onClick={() => {
+                props.setRhymeWord(element.word);
+              }}
               hasHighestScore={element.score === props.highestScore}
               hasHighestNumberOfSyllables={
                 element.numSyllables === props.highestNumberOfSyllables
@@ -43,7 +46,14 @@ const SearchComponent = props => {
         you can also enter names to create cool references to your favorite
         movies or brands.
       </p>
-      <button className="SearchComponent__ratebutton">RATE</button>
+      <button
+        className="SearchComponent__ratebutton"
+        onClick={() => {
+          alert("I had no time to do this yet 🙈");
+        }}
+      >
+        RATE
+      </button>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-export const getListOfRyhmeWordsForGivenWord = async word => {
+export const getListOfRhymeWordsForGivenWord = async word => {
   try {
     const url = "https://api.datamuse.com/words?rel_rhy=" + word + "&max=25";
     const apiresponse = await fetch(url);

@@ -1,13 +1,13 @@
 import React from "react";
 
-import { getListOfRyhmeWordsForGivenWord } from "../api/searchApi";
+import { getListOfRhymeWordsForGivenWord } from "../api/searchApi";
 import SearchComponent from "../components/SearchComponent";
 
 export default class SearchContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      ryhmeWord: "",
+      rhymeWord: "",
       foundRhymeWords: [],
       highestScore: undefined,
       highestNumberOfSyllables: undefined
@@ -15,8 +15,8 @@ export default class SearchContainer extends React.Component {
   }
 
   onSearchClick = async () => {
-    const foundRhymeWords = await getListOfRyhmeWordsForGivenWord(
-      this.state.ryhmeWord
+    const foundRhymeWords = await getListOfRhymeWordsForGivenWord(
+      this.state.rhymeWord
     );
     const highestNumberOfSyllables = Math.max(
       ...foundRhymeWords.map(e => e.numSyllables)
@@ -27,13 +27,21 @@ export default class SearchContainer extends React.Component {
   };
 
   onRhymeWordChange = changeEvent => {
-    this.setState({ ryhmeWord: changeEvent.target.value });
+    this.setState({ rhymeWord: changeEvent.target.value });
+  };
+
+  setRhymeWord = rhymeWord => {
+    console.log(rhymeWord);
+    this.setState({ rhymeWord }, () => {
+      this.onSearchClick();
+    });
   };
 
   render() {
     console.log(this.state);
     return (
       <SearchComponent
+        setRhymeWord={this.setRhymeWord}
         highestScore={this.state.highestScore}
         highestNumberOfSyllables={this.state.highestNumberOfSyllables}
         foundRhymeWords={this.state.foundRhymeWords}
