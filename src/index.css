@@ -1,17 +1,18 @@
-body {
+html {
   /* font-family: 'Montserrat', sans-serif;
 font-family: 'Raleway', sans-serif;
 font-family: 'Major Mono Display', monospace; */
   font-family: "Roboto", sans-serif;
+  font-size: 16px;
 }
 
 button,
 input {
-  font-family: "Raleway", sans-serif;
   border-radius: 5px 5px 5px 5px;
   background-color: white;
   border: 1px solid black;
   outline: none;
+  font-size: 1rem;
 }
 
 input {

@@ -1,7 +1,12 @@
 .ListItem_container {
   padding: 5px 0px;
   display: grid;
+  cursor: pointer;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.ListItem_container:hover {
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
 .ListItem_word {
@@ -10,4 +15,5 @@
 
 .ListItem_container p {
   margin: auto 0;
+  text-align: center;
 }
