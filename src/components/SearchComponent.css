@@ -38,6 +38,7 @@
 }
 
 .searchComponent__list {
+  margin-top: 3px;
   padding: 5px 0;
   grid-column-start: 1;
   overflow-y: scroll;

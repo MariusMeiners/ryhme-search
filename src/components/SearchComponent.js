@@ -3,7 +3,7 @@ import React from "react";
 import ListItem from "./ListItem";
 import "./SearchComponent.css";
 
-const SearchComponent = props => {
+const SearchComponent = (props) => {
   return (
     <div className="searchComponent__container">
       <h1 className="searchComponent__title">Enter a word you have in mind</h1>
@@ -13,15 +13,13 @@ const SearchComponent = props => {
         <br />
         <span> Struggle no longer.</span>
       </h2>
-      <form className="searchComponent__form">
+      <form className="searchComponent__form" onSubmit={props.onSearchClick}>
         <input
           type="text"
           value={props.rhymeWord}
           onChange={props.onRhymeWordChange}
         />
-        <button type="button" onClick={props.onSearchClick}>
-          SEARCH
-        </button>
+        <button type="submit">SEARCH</button>
         <div className="searchComponent__list">
           {props.foundRhymeWords.map((element, index) => (
             <ListItem
